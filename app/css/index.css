@@ -1,0 +1,25 @@
+.square {
+  float: left;
+  height: 100px;
+  width: 100px;
+  background-color: #EEEEEE;
+  margin: 4px;
+}
+
+#board {
+  height: 324px;
+  width: 324px;
+  background-color: #DDDDDD;
+  padding: 6px;
+}
+
+#instructBox {
+  width:324px;
+  height: 100px;
+  background-color:#DDDDDD;
+  text-align:center;
+}
+
+.test {
+  background-color:red;
+}

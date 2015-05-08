@@ -1,44 +1,45 @@
 /*global ticTacToe, $*/
 'use strict';
 
+//define global variable
 var ticTacToe = ticTacToe || {};
 
+//call functions after document is ready
 $(document).ready(function(){
 
-  var player=0;
+//at first, first player=0
+ //var player=0;
 
+//to switch between players on each click:
 
+    var player = 0;
+    var playersArray = ['X', 'O'];
+
+//when user clicks on a square, the following happens:
   $('.square').click(function(){
 
-    var sq = this;
-    player = 0;
-
-    var player = ['X', 'O'];
-
-    player=(1 - player);
 
 
-    // function changePlayer(arg1){
-    //   if (player===0)
-    //   {return player===1}
-    //   else {return player===0}
-    //   };
-
-
+//function to change square contents to X or 0
+//if it is player O, and the square is not already full, change it to O
+//also change instructions text
     if (player === 0) {
-      if (sq !== "X" || "O") {
-        $(sq).html("<h1>" + "O" + "</h1>");
+      if ($(this).text() !== "O" && $(this).text() !== "X") {
+        $(this).html("<h1>" + "O" + "</h1>");
         }
       $('#instruct').text("Player X, Go!");
-      changePlayer(player);
+      player = 1;
     }
+  //if it is not player O, it is player X, and the square is not already full, change it to X.
+//also change instructions text
     else {
-      if (sq !== "X" || "O") {
-        $(sq).html("<h1>" + "X" + "</h1>");
+      if ($(this).text() !== "O" && $(this).text() !== "X") {
+        $(this).html("<h1>" + "X" + "</h1>");
         }
       $('#instruct').text("Player O, Go!")
-      changePlayer(player);
-    };
+      player = 0;
+    }
+
   });
 
 });

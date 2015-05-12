@@ -12,22 +12,41 @@ $(document).ready(function(){
 
 //to switch between players on each click:
 
-    var player = 0;
-    var playersArray = ['X', 'O'];
+  var player = 0;
 
-//endGame function!!
+  function togglePlayer(){
+     player = Math.abs(player-1);
+     return player;
+  }
 
-function checkIfEndGame(){
-  if ($("#a1").text() === "O" && $("#b1").text() === "O" && $("#c1").text() === "O") {
+  function playerOWins() {
     console.log('Winner!');
     $('#instructBox').html("<h2>Player O Wins!</h2>");
+    $("#playAgain").toggleClass("hidden");
+    return (player = 1);
+  }
+
+  function playerXWins() {
+    console.log('Winner!');
+    $('#instructBox').html("<h2>Player X Wins!</h2>");
+    $("#playAgain").toggleClass("hidden");
+    return (player = 0);
+  }
+
+function playerMap(){
+  if (player = 0) {
+    return "O";
+  }
+  else if (player = 1) {
+    return "X";
   }
 }
 
-
-//WRITE PLAY AGAIN BUTTON FUNC
-
-
+function newGame(){
+  $(".square").text(" ");
+  $('#instructBox').html("<h2>Player " + playerMap() + " Go!</h2>");
+  $("#playAgain").toggleClass("hidden");
+}
 
 
 //when user clicks on a square, the following happens:
@@ -38,9 +57,9 @@ function checkIfEndGame(){
     if (player === 0) {
       if ($(this).text() !== "O" && $(this).text() !== "X") {
         $(this).html("<h1>" + "O" + "</h1>");
-        $('#instruct').text("Player X, Go!");
-        player = 1;
         checkIfEndGame();
+        $('#instruct').text("Player X, Go!");
+        togglePlayer();
         }
     }
   //if it is not player O, it is player X, and the square is not already full, change it to X.
@@ -48,10 +67,70 @@ function checkIfEndGame(){
     else {
       if ($(this).text() !== "O" && $(this).text() !== "X") {
         $(this).html("<h1>" + "X" + "</h1>");
-        $('#instruct').text("Player O, Go!")
-        player = 0;
         checkIfEndGame();
+        $('#instruct').text("Player O, Go!")
+        togglePlayer();
       }
     }
   }); //<-on Click
+
+  $('#playAgain').click(function(){
+    console.log('button works');
+      newGame();
+  });//<-button click
+
+
+  function checkIfEndGame(){
+  if ($("#a1").text() === "O" && $("#b1").text() === "O" && $("#c1").text() === "O") {
+    playerOWins();
+  }
+  else if ($("#a2").text() === "O" && $("#b2").text() === "O" && $("#c2").text() === "O") {
+    playerOWins();
+  }
+  else if ($("#a3").text() === "O" && $("#b3").text() === "O" && $("#c3").text() === "O") {
+    playerOWins();
+  }
+  else if ($("#a1").text() === "O" && $("#a2").text() === "O" && $("#a3").text() === "O") {
+    playerOWins();
+  }
+  else if ($("#b1").text() === "O" && $("#b2").text() === "O" && $("#b3").text() === "O") {
+    playerOWins();
+  }
+  else if ($("#c1").text() === "O" && $("#c2").text() === "O" && $("#c3").text() === "O") {
+    playerOWins();
+  }
+  else if ($("#a1").text() === "O" && $("#b2").text() === "O" && $("#c3").text() === "O") {
+    playerOWins();
+  }
+  else if ($("#c1").text() === "O" && $("#b2").text() === "O" && $("#a3").text() === "O") {
+    playerOWins();
+  }
+  //now Xs
+    if ($("#a1").text() === "X" && $("#b1").text() === "X" && $("#c1").text() === "X") {
+    playerXWins();
+  }
+  else if ($("#a2").text() === "X" && $("#b2").text() === "X" && $("#c2").text() === "X") {
+    playerXWins();
+  }
+  else if ($("#a3").text() === "X" && $("#b3").text() === "X" && $("#c3").text() === "X") {
+    playerXWins();
+  }
+  else if ($("#a1").text() === "X" && $("#a2").text() === "X" && $("#a3").text() === "X") {
+    playerXWins();
+  }
+  else if ($("#b1").text() === "X" && $("#b2").text() === "X" && $("#b3").text() === "X") {
+    playerXWins();
+  }
+  else if ($("#c1").text() === "X" && $("#c2").text() === "X" && $("#c3").text() === "X") {
+    playerXWins();
+  }
+  else if ($("#a1").text() === "X" && $("#b2").text() === "X" && $("#c3").text() === "X") {
+    playerXWins();
+  }
+  else if ($("#c1").text() === "X" && $("#b2").text() === "X" && $("#a3").text() === "X") {
+    playerXWins();
+  }
+}
+
+
 }); //<-document ready

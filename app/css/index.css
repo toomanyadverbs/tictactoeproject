@@ -11,15 +11,55 @@
   width: 324px;
   background-color: #DDDDDD;
   padding: 6px;
+  margin: 10px auto 10px auto;
+  box-shadow: 10px 10px #CCCCCC;
+  border-radius: 10px;
 }
 
 #instructBox {
-  width:324px;
-  height: 100px;
-  background-color:#DDDDDD;
-  text-align:center;
+  width:314px;
+  background-color:#EEEEEE;
+  text-align: center;
+  margin: 10px auto 10px auto;
+  box-shadow: 10px 10px #CCCCCC;
+  border-radius: 10px;
+  border: 10px solid #DDDDDD;
+  padding: 30px auto 20px auto;
 }
 
-.test {
-  background-color:red;
+h1 {
+  font-family: verdana;
+  margin: 10px 10px 20px 25px;
+  font-size: 66px;
+}
+
+h2 {
+  font-family: verdana;
+  text-align: center;
+  color: white;
+}
+
+#playAgain {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 0px #CCCCCC;
+  -moz-box-shadow: 4px 4px 0px #CCCCCC;
+  box-shadow: 4px 4px 0px #CCCCCC;
+  font-family: verdana;
+  color: #ffffff;
+  font-size: 20px;
+  background: #EEEEEE;
+  padding: 10px 10px 10px 10px;
+  margin: 20px auto 20px 40%;
+  font-weight: bold;
+  float: left;
+}
+
+#playAgain:hover {
+  background: #DDDDDD;
+}
+
+.hidden {
+  display:none;
 }

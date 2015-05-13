@@ -23,12 +23,21 @@ $(document).ready(function(){
     console.log('Winner!');
     $('#instruct').html("<h2>Player O Wins!</h2>");
     $("#playAgain").toggleClass("hidden");
+    $(".square").html("<h1>" + "O" + "</h1>")
   }
 
   function playerXWins() {
     console.log('Winner!');
     $('#instruct').html("<h2>Player X Wins!</h2>");
     $("#playAgain").toggleClass("hidden");
+    $(".square").html("<h1>" + "X" + "</h1>")
+  }
+
+  function nobodyWins(){
+    console.log('Nope');
+    $('#instruct').html("<h2>Nobody Wins</h2>");
+    $("#playAgain").toggleClass("hidden");
+    $(".square").html("<h1>" + ":(" + "</h1>")
   }
 
   function playerMap(){
@@ -129,7 +138,20 @@ $(document).ready(function(){
     else if ($("#c1").text() === "X" && $("#b2").text() === "X" && $("#a3").text() === "X") {
       playerXWins();
     }
-  }
+    //else if ($("#a1").text() === "O" || $("#a1").text() === "X") && ($("#a2").text() === "O" || $("#a1").text() === "X") {
+      //nobodyWins();
+    //}
+  } //<- if checkIfEndGame
 
 
 }); //<-document ready
+
+// var x;
+
+// function nobodyWinsFunc(x) {
+//   if ($("#x").text() === "O" || $("#x").text()=== "X")
+//     {return true;
+//     }
+// }
+
+// if nobodyWinsFunc($(a1));

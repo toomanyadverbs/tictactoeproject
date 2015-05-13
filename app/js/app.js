@@ -89,6 +89,13 @@ $(document).ready(function(){
 
 
   function checkIfEndGame(){
+    var x;
+
+    function nobodyWinsFunc(x) {
+      if (x === "O" || x=== "X")
+        {return true;
+      }
+    }
     if ($("#a1").text() === "O" && $("#b1").text() === "O" && $("#c1").text() === "O") {
       playerOWins();
     }
@@ -138,20 +145,10 @@ $(document).ready(function(){
     else if ($("#c1").text() === "X" && $("#b2").text() === "X" && $("#a3").text() === "X") {
       playerXWins();
     }
-    //else if ($("#a1").text() === "O" || $("#a1").text() === "X") && ($("#a2").text() === "O" || $("#a1").text() === "X") {
-      //nobodyWins();
-    //}
+    else if (nobodyWinsFunc($("#a1").text()) === true && nobodyWinsFunc($("#b1").text()) == true && nobodyWinsFunc($("#c1").text()) === true && nobodyWinsFunc($("#a2").text()) === true && nobodyWinsFunc($("#b2").text()) === true && nobodyWinsFunc($("#c2").text()) === true && nobodyWinsFunc($("#a3").text()) === true && nobodyWinsFunc($("#b3").text()) === true && nobodyWinsFunc($("#c3").text()) === true) {
+      nobodyWins();
+    }
   } //<- if checkIfEndGame
 
 
 }); //<-document ready
-
-// var x;
-
-// function nobodyWinsFunc(x) {
-//   if ($("#x").text() === "O" || $("#x").text()=== "X")
-//     {return true;
-//     }
-// }
-
-// if nobodyWinsFunc($(a1));

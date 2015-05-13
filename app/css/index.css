@@ -2,28 +2,28 @@
   float: left;
   height: 100px;
   width: 100px;
-  background-color: #EEEEEE;
+  background-color: #4BBFB0;
   margin: 4px;
 }
 
 #board {
   height: 324px;
   width: 324px;
-  background-color: #DDDDDD;
+  background-color: #43AB93;
   padding: 6px;
   margin: 10px auto 10px auto;
-  box-shadow: 10px 10px #CCCCCC;
+  box-shadow: 10px 10px #608078;
   border-radius: 10px;
 }
 
 #instructBox {
   width:314px;
-  background-color:#EEEEEE;
+  background-color:#4BBFB0;
   text-align: center;
   margin: 10px auto 10px auto;
-  box-shadow: 10px 10px #CCCCCC;
+  box-shadow: 10px 10px #608078;
   border-radius: 10px;
-  border: 10px solid #DDDDDD;
+  border: 10px solid #43AB93;
   padding: 30px auto 20px auto;
 }
 
@@ -31,25 +31,26 @@ h1 {
   font-family: verdana;
   margin: 10px 10px 20px 25px;
   font-size: 66px;
+  color: #FFEBEB;
 }
 
 h2 {
   font-family: verdana;
   text-align: center;
-  color: white;
+  color: #FFEBEB;
 }
 
 #playAgain {
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
   border-radius: 10px;
-  -webkit-box-shadow: 4px 4px 0px #CCCCCC;
-  -moz-box-shadow: 4px 4px 0px #CCCCCC;
-  box-shadow: 4px 4px 0px #CCCCCC;
+  -webkit-box-shadow: 4px 4px 0px #608078;
+  -moz-box-shadow: 4px 4px 0px #608078;
+  box-shadow: 4px 4px 0px #608078;
   font-family: verdana;
-  color: #ffffff;
+  color: #FFEBEB;
   font-size: 20px;
-  background: #EEEEEE;
+  background: #4BBFB0;
   padding: 10px 10px 10px 10px;
   margin: 20px auto 20px 40%;
   font-weight: bold;
@@ -57,7 +58,7 @@ h2 {
 }
 
 #playAgain:hover {
-  background: #DDDDDD;
+  background: #43AB93;
 }
 
 .hidden {

@@ -1,5 +1,5 @@
 /*global ticTacToe, $*/
-'use strict';
+"use strict";
 
 //define global variable
 var ticTacToe = ticTacToe || {};
@@ -20,22 +20,24 @@ $(document).ready(function(){
   }
 
   function playerOWins() {
-    console.log('Winner!');
-    $('#instruct').html("<h2>Player O Wins!</h2>");
+    console.log("Winner!");
+    $("#instruct").html("<h2>Player O Wins!</h2>");
     $("#playAgain").toggleClass("hidden");
-    $(".square").html("<h1>" + "O" + "</h1>")
+    $(".square").html("<h1>" + "O" + "</h1>");
+    $(".square").addClass("win");
   }
 
   function playerXWins() {
-    console.log('Winner!');
-    $('#instruct').html("<h2>Player X Wins!</h2>");
+    console.log("Winner!");
+    $("#instruct").html("<h2>Player X Wins!</h2>");
     $("#playAgain").toggleClass("hidden");
     $(".square").html("<h1>" + "X" + "</h1>")
+    $(".square").addClass("win");
   }
 
   function nobodyWins(){
-    console.log('Nope');
-    $('#instruct').html("<h2>Nobody Wins</h2>");
+    console.log("Nope");
+    $("#instruct").html("<h2>Nobody Wins</h2>");
     $("#playAgain").toggleClass("hidden");
     $(".square").html("<h1>" + ":(" + "</h1>")
   }
@@ -51,13 +53,14 @@ $(document).ready(function(){
 
   function newGame(){
     $(".square").text(" ");
-    $('#instruct').html("<h2>Player " + playerMap() + " Go!</h2>");
+    $("#instruct").html("<h2>Player " + playerMap() + " Go!</h2>");
     $("#playAgain").toggleClass("hidden");
+    $(".square").removeClass("win");
   }
 
 
 //when user clicks on a square, the following happens:
-  $('.square').click(function(){
+  $(".square").click(function(){
 //function to change square contents to X or 0
 //if it is player O, and the square is not already full, change it to O
 //also change instructions text
@@ -75,7 +78,7 @@ $(document).ready(function(){
       //debugger;
       if ($(this).text() !== "O" && $(this).text() !== "X") {
         $(this).html("<h1>" + "X" + "</h1>");
-        $('#instruct').html("<h2>Player O, Go!</h2>")
+        $("#instruct").html("<h2>Player O, Go!</h2>")
         checkIfEndGame();
         togglePlayer();
       }
@@ -83,7 +86,7 @@ $(document).ready(function(){
   }); //<-on Click
 
   $('#playAgain').click(function(){
-    console.log('button works');
+    console.log("button works");
       newGame();
   });//<-button click
 

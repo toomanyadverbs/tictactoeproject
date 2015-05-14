@@ -1,3 +1,5 @@
+'use strict';
+
 
 /*a
 a1 === "X"

@@ -43,21 +43,20 @@ $(document).ready(function(){
   }
 
   function playerMap(){
-    if (player = 0) {
+    if (player === 0) {
       return "O";
     }
-    else if (player = 1) {
+    else if (player === 1) {
       return "X";
     }
   }
 
   function newGame(){
     $(".square").text(" ");
-    $("#instruct").html("<h2>Player " + playerMap() + " Go!</h2>");
+    $("#instruct").html("<h2>Player " + playerMap() + ", Go!</h2>");
     $("#playAgain").toggleClass("hidden");
     $(".square").removeClass("win");
   }
-
 
 //when user clicks on a square, the following happens:
   $(".square").click(function(){

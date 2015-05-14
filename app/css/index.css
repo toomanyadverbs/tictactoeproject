@@ -24,11 +24,25 @@ body {
 }
 
 .square:hover {
-   box-shadow: inset 0 0 1em #57E6C4;
+  box-shadow: inset 0 0 1em #57E6C4, 0px 0px 0px 5px  #43AB93;
+}
+
+.window {
+  display: table-cell;
+  padding: 0px;
 }
 
 .win{
-  box-shadow: inset 0 0 2em #FFE373;
+  background-color: rgba(75, 191 , 176, .4);
+  box-shadow: inset 0 0 2em #FFE373, 0px 0px 0px 5px #43AB93;
+}
+
+.oWinBoard {
+  background-image: url(../imgs/imgO.png);
+}
+
+.xWinBoard {
+  background-image: url(../imgs/imgX.png);
 }
 
 .hidden {
@@ -39,7 +53,7 @@ body {
   margin: 3% auto 3% auto;
 }
 
-#board {
+.board {
   height: 324px;
   width: 324px;
   background-color: #43AB93;

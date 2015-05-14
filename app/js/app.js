@@ -25,6 +25,7 @@ $(document).ready(function(){
     $("#playAgain").toggleClass("hidden");
     $(".square").html("<h1>" + "O" + "</h1>");
     $(".square").addClass("win");
+    $(".window").addClass("oWinBoard")
   }
 
   function playerXWins() {
@@ -33,13 +34,16 @@ $(document).ready(function(){
     $("#playAgain").toggleClass("hidden");
     $(".square").html("<h1>" + "X" + "</h1>")
     $(".square").addClass("win");
+    $(".window").addClass("xWinBoard")
   }
 
   function nobodyWins(){
     console.log("Nope");
     $("#instruct").html("<h2>Nobody Wins</h2>");
     $("#playAgain").toggleClass("hidden");
-    $(".square").html("<h1>" + ":(" + "</h1>")
+    $(".square").html("<h1>" + ":(" + "</h1>");
+    $(".window").removeClass("xWinBoard");
+    $(".window").removeClass("oWinBoard");
   }
 
   function playerMap(){
@@ -56,6 +60,8 @@ $(document).ready(function(){
     $("#instruct").html("<h2>Player " + playerMap() + ", Go!</h2>");
     $("#playAgain").toggleClass("hidden");
     $(".square").removeClass("win");
+    $(".window").removeClass("oWinBoard");
+    $(".window").removeClass("xWinBoard");
   }
 
 //when user clicks on a square, the following happens:

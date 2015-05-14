@@ -1,0 +1,9 @@
+{
+  "firebase": "toomanyadverbs-ttt",
+  "public": "app",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

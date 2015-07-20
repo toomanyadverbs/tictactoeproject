@@ -7,11 +7,6 @@ var ticTacToe = ticTacToe || {};
 //call functions after document is ready
 $(document).ready(function(){
 
-//at first, first player=0
- //var player=0;
-
-//to switch between players on each click:
-
   var player = 0;
 
   function togglePlayer(){
@@ -78,14 +73,14 @@ $(document).ready(function(){
         }
     }
   //if it is not player O, it is player X, and the square is not already full, change it to X.
-//also change instructions text
+  //also change instructions text
     else {
       //debugger;
       if ($(this).text() !== "O" && $(this).text() !== "X") {
         $(this).html("<h1>" + "X" + "</h1>");
         $("#instruct").html("<h2>Player O, Go!</h2>")
-        checkIfEndGame();
-        togglePlayer();
+        checkIfEndGame();https://slack-files.com/files-tmb/T0351JZQ0-F05669VB5-67a324418c/2015-05-20_21.25.56_1024.png
+        togglePlayer();https://slack-files.com/files-tmb/T0351JZQ0-F05669VB5-67a324418c/2015-05-20_21.25.56_1024.png
       }
     }
   }); //<-on Click
@@ -157,6 +152,4 @@ $(document).ready(function(){
       nobodyWins();
     }
   } //<- if checkIfEndGame
-
-
 }); //<-document ready

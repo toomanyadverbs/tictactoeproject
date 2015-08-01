@@ -5,13 +5,13 @@
 var ticTacToe = ticTacToe || {};
 
 //call functions after document is ready
-$(document).ready(function(){
+$(document).ready(function() {
 
   var player = 0;
 
-  function togglePlayer(){
-     player = Math.abs(player-1);
-     return player;
+  function togglePlayer() {
+    player = Math.abs(player - 1);
+    return player;
   }
 
   function playerOWins() {
@@ -32,7 +32,7 @@ $(document).ready(function(){
     $(".window").addClass("xWinBoard")
   }
 
-  function nobodyWins(){
+  function nobodyWins() {
     console.log("Nope");
     $("#instruct").html("<h2>Nobody Wins</h2>");
     $("#playAgain").toggleClass("hidden");
@@ -41,16 +41,15 @@ $(document).ready(function(){
     $(".window").removeClass("oWinBoard");
   }
 
-  function playerMap(){
+  function playerMap() {
     if (player === 0) {
       return "O";
-    }
-    else if (player === 1) {
+    } else if (player === 1) {
       return "X";
     }
   }
 
-  function newGame(){
+  function newGame() {
     $(".square").text(" ");
     $("#instruct").html("<h2>Player " + playerMap() + ", Go!</h2>");
     $("#playAgain").toggleClass("hidden");
@@ -59,96 +58,81 @@ $(document).ready(function(){
     $(".window").removeClass("xWinBoard");
   }
 
-//when user clicks on a square, the following happens:
-  $(".square").click(function(){
-//function to change square contents to X or 0
-//if it is player O, and the square is not already full, change it to O
-//also change instructions text
+  //when user clicks on a square, the following happens:
+  $(".square").click(function() {
+    //function to change square contents to X or 0
+    //if it is player O, and the square is not already full, change it to O
+    //also change instructions text
     if (player === 0) {
       if ($(this).text() !== "O" && $(this).text() !== "X") {
         $(this).html("<h1>" + "O" + "</h1>");
         $('#instruct').html("<h2>Player X, Go!</h2>");
         checkIfEndGame();
         togglePlayer();
-        }
+      }
     }
-  //if it is not player O, it is player X, and the square is not already full, change it to X.
-  //also change instructions text
+    //if it is not player O, it is player X, and the square is not already full, change it to X.
+    //also change instructions text
     else {
       //debugger;
       if ($(this).text() !== "O" && $(this).text() !== "X") {
         $(this).html("<h1>" + "X" + "</h1>");
         $("#instruct").html("<h2>Player O, Go!</h2>")
-        checkIfEndGame();https://slack-files.com/files-tmb/T0351JZQ0-F05669VB5-67a324418c/2015-05-20_21.25.56_1024.png
-        togglePlayer();https://slack-files.com/files-tmb/T0351JZQ0-F05669VB5-67a324418c/2015-05-20_21.25.56_1024.png
+        checkIfEndGame();
+        togglePlayer();
       }
     }
   }); //<-on Click
 
-  $('#playAgain').click(function(){
+  $('#playAgain').click(function() {
     console.log("button works");
-      newGame();
-  });//<-button click
+    newGame();
+  }); //<-button click
 
 
-  function checkIfEndGame(){
+  function checkIfEndGame() {
     var x;
 
     function nobodyWinsFunc(x) {
-      if (x === "O" || x=== "X")
-        {return true;
+      if (x === "O" || x === "X") {
+        return true;
       }
     }
     if ($("#a1").text() === "O" && $("#b1").text() === "O" && $("#c1").text() === "O") {
       playerOWins();
-    }
-    else if ($("#a2").text() === "O" && $("#b2").text() === "O" && $("#c2").text() === "O") {
+    } else if ($("#a2").text() === "O" && $("#b2").text() === "O" && $("#c2").text() === "O") {
       playerOWins();
-    }
-    else if ($("#a3").text() === "O" && $("#b3").text() === "O" && $("#c3").text() === "O") {
+    } else if ($("#a3").text() === "O" && $("#b3").text() === "O" && $("#c3").text() === "O") {
       playerOWins();
-    }
-    else if ($("#a1").text() === "O" && $("#a2").text() === "O" && $("#a3").text() === "O") {
+    } else if ($("#a1").text() === "O" && $("#a2").text() === "O" && $("#a3").text() === "O") {
       playerOWins();
-    }
-    else if ($("#b1").text() === "O" && $("#b2").text() === "O" && $("#b3").text() === "O") {
+    } else if ($("#b1").text() === "O" && $("#b2").text() === "O" && $("#b3").text() === "O") {
       playerOWins();
-    }
-    else if ($("#c1").text() === "O" && $("#c2").text() === "O" && $("#c3").text() === "O") {
+    } else if ($("#c1").text() === "O" && $("#c2").text() === "O" && $("#c3").text() === "O") {
       playerOWins();
-    }
-    else if ($("#a1").text() === "O" && $("#b2").text() === "O" && $("#c3").text() === "O") {
+    } else if ($("#a1").text() === "O" && $("#b2").text() === "O" && $("#c3").text() === "O") {
       playerOWins();
-    }
-    else if ($("#c1").text() === "O" && $("#b2").text() === "O" && $("#a3").text() === "O") {
+    } else if ($("#c1").text() === "O" && $("#b2").text() === "O" && $("#a3").text() === "O") {
       playerOWins();
     }
     //now Xs
     else if ($("#a1").text() === "X" && $("#b1").text() === "X" && $("#c1").text() === "X") {
       playerXWins();
-    }
-    else if ($("#a2").text() === "X" && $("#b2").text() === "X" && $("#c2").text() === "X") {
+    } else if ($("#a2").text() === "X" && $("#b2").text() === "X" && $("#c2").text() === "X") {
       playerXWins();
-    }
-    else if ($("#a3").text() === "X" && $("#b3").text() === "X" && $("#c3").text() === "X") {
+    } else if ($("#a3").text() === "X" && $("#b3").text() === "X" && $("#c3").text() === "X") {
       playerXWins();
-    }
-    else if ($("#a1").text() === "X" && $("#a2").text() === "X" && $("#a3").text() === "X") {
+    } else if ($("#a1").text() === "X" && $("#a2").text() === "X" && $("#a3").text() === "X") {
       playerXWins();
-    }
-    else if ($("#b1").text() === "X" && $("#b2").text() === "X" && $("#b3").text() === "X") {
+    } else if ($("#b1").text() === "X" && $("#b2").text() === "X" && $("#b3").text() === "X") {
       playerXWins();
-    }
-    else if ($("#c1").text() === "X" && $("#c2").text() === "X" && $("#c3").text() === "X") {
+    } else if ($("#c1").text() === "X" && $("#c2").text() === "X" && $("#c3").text() === "X") {
       playerXWins();
-    }
-    else if ($("#a1").text() === "X" && $("#b2").text() === "X" && $("#c3").text() === "X") {
+    } else if ($("#a1").text() === "X" && $("#b2").text() === "X" && $("#c3").text() === "X") {
       playerXWins();
-    }
-    else if ($("#c1").text() === "X" && $("#b2").text() === "X" && $("#a3").text() === "X") {
+    } else if ($("#c1").text() === "X" && $("#b2").text() === "X" && $("#a3").text() === "X") {
       playerXWins();
-    }
-    else if (nobodyWinsFunc($("#a1").text()) === true && nobodyWinsFunc($("#b1").text()) == true && nobodyWinsFunc($("#c1").text()) === true && nobodyWinsFunc($("#a2").text()) === true && nobodyWinsFunc($("#b2").text()) === true && nobodyWinsFunc($("#c2").text()) === true && nobodyWinsFunc($("#a3").text()) === true && nobodyWinsFunc($("#b3").text()) === true && nobodyWinsFunc($("#c3").text()) === true) {
+    } else if (nobodyWinsFunc($("#a1").text()) === true && nobodyWinsFunc($("#b1").text()) == true && nobodyWinsFunc($("#c1").text()) === true && nobodyWinsFunc($("#a2").text()) === true && nobodyWinsFunc($("#b2").text()) === true && nobodyWinsFunc($("#c2").text()) === true && nobodyWinsFunc($("#a3").text()) === true && nobodyWinsFunc($("#b3").text()) === true && nobodyWinsFunc($("#c3").text()) === true) {
       nobodyWins();
     }
   } //<- if checkIfEndGame
